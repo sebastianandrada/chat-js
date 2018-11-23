@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { ChatModule } from './chat/chat.module';
+import { CommonModule } from '@angular/common';
+import { MaterialModule } from './shared/material/material.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import { ChatModule } from './chat/chat.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     SharedModule,
+    CommonModule,
+    MaterialModule,
     ChatModule
   ],
   providers: [],

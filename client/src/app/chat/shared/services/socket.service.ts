@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 
 import * as socketIo from 'socket.io-client'
-import { Message } from '@angular/compiler/src/i18n/i18n_ast';
+
 import { Observable } from 'rxjs';
+import { Message } from '../model/message';
+import { Event } from "../model/event.enum";
 
 const SERVER_URL = 'http://localhost:8080'
 
