@@ -1,7 +1,63 @@
-<mat-sidenav-container class="example-container" *ngIf="shouldRun">
-  <mat-sidenav mode="side" opened>Sidenav content</mat-sidenav>
-  <mat-sidenav-content>Main content</mat-sidenav-content>
-</mat-sidenav-container>
+<nb-layout>
+  <nb-layout-header fixed>
+    <a href="#" (click)="toggle()"><i class="nb-menu"></i>icbc chat</a>
+  </nb-layout-header>
 
+  <nb-layout-header subheader>
+    <nb-actions>
+      <nb-action icon="menu-outline">Nuevo chat</nb-action>
+      <nb-action icon="nb-search">asd</nb-action>
+      <nb-action icon="nb-edit">asd</nb-action>
+    </nb-actions>
+  </nb-layout-header>
+  <nb-sidebar>
+    <nb-card>
+      <nb-card-body>
+        <nb-tabset fullWidth>
+          <nb-tab tabTitle="Users">
+            <nb-user size="small" name="Franco Scolari" title="Engineer" class="user-list">
+            </nb-user>
+            <nb-user size="small" name="Gabriel Maciel" title="Engineer">
+            </nb-user>
 
-<router-outlet></router-outlet>
+          </nb-tab>
+          <nb-tab tabTitle="Conversations">
+            <p>Big <strong>daddy</strong>.</p>
+          </nb-tab>
+        </nb-tabset>
+      </nb-card-body>
+    </nb-card>
+  </nb-sidebar>
+  <nb-layout-column>
+      <nb-chat title="Big Daddy">
+          <!-- <nb-chat-message *ngFor="let msg of messages"
+                           [type]="msg.type"
+                           [message]="msg.content"
+                           [reply]="msg.reply"
+                           [sender]="msg.user.name"
+                           [date]="msg.date"
+                           [files]="msg.files"
+                           [quote]="msg.quote"
+                           [avatar]="msg.user.avatar">
+      </nb-chat-message> -->
+      <nb-chat-message
+       [type]="'text'"
+       [message]="'Hola como te va'"
+       [reply]="'false'"
+       [sender]="'sebastian andrada'"
+       [date]="'Mon Nov 26 2018 16:22:47 GMT-0300'"
+       [files]="'https://www.infobae.com/new-resizer/iB2F3XKh4ER700MorBLq2b5H0MM=/600x0/filters:quality(100)/s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/11/26114218/OriHime-D-robot-camarero-3.jpg'"
+       [quote]="'guachin comprotate'"
+       [avatar]="'Sebastia andrada'"
+       >
+      </nb-chat-message>
+    
+      <nb-chat-form (send)="sendMessage($event)" [dropFiles]="true">
+      </nb-chat-form>
+    </nb-chat>
+
+    <!-- <router-outlet></router-outlet> -->
+  </nb-layout-column>
+
+  <nb-layout-footer fixed> <!-- Insert footer here --> </nb-layout-footer>
+</nb-layout>

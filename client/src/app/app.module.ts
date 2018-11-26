@@ -8,6 +8,8 @@ import { SharedModule } from './shared/shared.module';
 import { ChatModule } from './chat/chat.module';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from './shared/material/material.module';
+import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbActionsModule, NbTabsetModule, NbCardModule, NbUserModule, NbChatModule } from '@nebular/theme';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,15 @@ import { MaterialModule } from './shared/material/material.module';
     SharedModule,
     CommonModule,
     MaterialModule,
-    ChatModule
+    ChatModule,
+    NbLayoutModule,
+    NbThemeModule.forRoot({ name: 'cosmic' }),
+    NbSidebarModule.forRoot(),
+    NbActionsModule,
+    NbTabsetModule,
+    NbCardModule,
+    NbUserModule,
+    NbChatModule
   ],
   providers: [],
   bootstrap: [AppComponent]
